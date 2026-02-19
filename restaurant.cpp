@@ -2,9 +2,7 @@
 #include <fstream>
 #include <iomanip>
 using namespace std;
-
 const int MAX = 50;
-
 struct Food
 {
     int id;
@@ -283,12 +281,9 @@ void customerPanel()
 int main()
 {
     loadFile();
-
     if(totalItems==0)
         defaultMenu();
-
     int choice;
-
     do
     {
     cout << "\n                 WELCOME                       \n";
@@ -300,7 +295,6 @@ int main()
         cout << " 3. Exit\n";
         cout << " Enter Choice: ";
         cin >> choice;
-
         switch(choice)
         {
             case 1: adminLogin(); break;
@@ -313,3 +307,4 @@ int main()
 
     return 0;
 }
+
