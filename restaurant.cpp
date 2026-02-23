@@ -14,7 +14,7 @@ struct Food
 };
 
 Food menu[MAX];
-int totalItems = 0,count=0;
+int totalItems = 0;
 
 // Function Prototypes
 void loadFile();
@@ -235,9 +235,6 @@ void adminLogin()
 // Customer Panel
 void customerPanel()
 {
-    int count=0,CartId[count],CartQty[count];  
-    string name,CartName[count];
-    float CartPrice[count];
     cout << "\t\t\t\t\t     Enter Customer Name: ";
     cin >> name;
 
@@ -324,4 +321,5 @@ void customerPanel()
 
     return 0;
 }
+
 
