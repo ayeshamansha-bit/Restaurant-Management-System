@@ -235,6 +235,7 @@ void adminLogin()
 // Customer Panel
 void customerPanel()
 {
+	string name;
     cout << "\t\t\t\t\t     Enter Customer Name: ";
     cin >> name;
 
@@ -260,14 +261,16 @@ void customerPanel()
 				cin>>id;		
                 cout<<"\t\t\t\t\t     Enter Quantity: ";
                 cin >> quantity;
-
-        for(int i=0;i<totalItems;i++)
+for(int i=0;i<totalItems;i++)
         {
             if(menu[i].id==id)
             {
             //Storing order in cart
-                
-				 bill += menu[i].price * quantity;
+                Cartname[cartcount]=menu[i].name;
+                Cartprice[cartcount]=menu[i].price;
+                CartQty[cartcount]=quantity;
+                cartcount++;
+				 bill += menu[i].price* quantity;
                 cout<<"\t\t\t\t\t     Added to Cart!\n";
             }
         }
@@ -276,17 +279,27 @@ void customerPanel()
     }while(more=='y'||more=='Y');
     break;
     case 3:
+    	 cout<<"\n\t\t\t\t================== CART ==================\n";
+    	 cout <<"\t\t\t\t  "<<left<<setw(15)<<"Name"<<setw(10)<<"Qty"<<setw(10)<<"Price"<<endl;
+        
+    for (int i = 0; i <cartcount; i++)
+    {
+        cout <<"\t\t\t\t  "<<left<<setw(15)<< Cartname[i]<<setw(10)<<CartQty[i]<<setw(10)<<Cartprice[i]<<endl;
+    }
+    break;
+        
+    case 4:
        cout << "\n\t\t\t\t================== BILL ==================\n";
        cout << "\t\t\t\t\t     Customer: " << name << endl;
        cout << "\t\t\t\t\t     Total Bill: " << bill << endl;
        cout << "\t\t\t\t\t     Thank You!\n";
        break;
-    case 4:
+    case 5:
     	cout<<"\t\t\t\t\t     Thankyou for coming!"<<endl;
     	break;
     default:
     	cout<<"\t\t\t\t\t     Invalid input."<<endl;
-} }while (choice!=4);
+} }while (choice!=5);
 }
 // Main Function
  int main(){
@@ -321,5 +334,6 @@ void customerPanel()
 
     return 0;
 }
+
 
 
