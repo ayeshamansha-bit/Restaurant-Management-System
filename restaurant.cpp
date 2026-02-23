@@ -11,7 +11,7 @@ struct Food
     string name;
     string category;
     float price;
-}F;
+};
 
 Food menu[MAX];
 int totalItems = 0,count=0;
@@ -324,3 +324,4 @@ void customerPanel()
 
     return 0;
 }
+
